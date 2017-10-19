@@ -17,6 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/products/{id}', 'MenuItemController@show');
 Route::get('/products', 'MenuItemController@index');
-
+Route::post('/products/new', 'MenuItemController@newProduct');
+Route::get('/products/show/{id}', 'MenuItemController@show');
+Route::get('/restaurants/', 'RestaurantController@index');
+Route::get('/restaurants/show/{id}', 'RestaurantController@show');
